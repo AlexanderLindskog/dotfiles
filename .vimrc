@@ -40,7 +40,6 @@ if has('gui_running')
 endif
 
 " Custom
-set nocompatible
 filetype on
 syntax on
 set encoding=utf-8
