@@ -40,9 +40,16 @@ if has('gui_running')
 endif
 
 " Custom
+if has('nvim')
+    " Neovim specific commands
+else
+    " Standard vim specific commands
+endif
+
 filetype on
 syntax on
 set encoding=utf-8
+
 set number
 set relativenumber
 set autoindent
@@ -52,6 +59,9 @@ highlight Cursorline cterm=bold ctermbg=black
 set cursorcolumn
 highlight Cursorcolumn ctermbg=black
 set showcmd
+
+let &t_SI = "\e[4 q"
+let $t_EI = "\e[2 q"
 
 set hlsearch
 set ignorecase
