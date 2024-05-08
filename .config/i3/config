@@ -35,13 +35,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Set touchpad (11) property tapping (325) on (1)
-exec xinput set-prop 11 325 1
-
-# Set monitor dim to 30 minutes
-exec xset s 1800 1800
-exec xset dpms 1800 1800 1800
-
 # Update status bar
 set $refresh_i3status killall -SIGUSR1 i3status
 
