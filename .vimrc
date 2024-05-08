@@ -54,10 +54,12 @@ set number
 set relativenumber
 set autoindent
 set laststatus=2
-set cursorline
-highlight Cursorline cterm=bold ctermbg=black
-set cursorcolumn
-highlight Cursorcolumn ctermbg=black
+if !has('nvim')
+    set cursorline
+    highlight Cursorline cterm=bold ctermbg=black
+    set cursorcolumn
+    highlight Cursorcolumn ctermbg=black
+endif
 set showcmd
 
 let &t_SI = "\e[4 q"
