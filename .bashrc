@@ -13,3 +13,6 @@ COLOR2="$(tput setaf 2)"
 COLOR10="$(tput setaf 10)"
 RESET="$(tput sgr0)"
 PS1='${COLOR2}\u@\h ${COLOR10}\W ${RESET}\$ '
+
+. "$HOME/.cargo/env"
+
