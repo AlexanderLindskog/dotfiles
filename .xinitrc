@@ -8,7 +8,7 @@ xinput set-prop "ELAN0634:00 04F3:3124 Touchpad" "libinput Natural Scrolling Ena
 xset s 1800 1800
 xset dpms 1800 1800 1800
 
-session=${1:-i3}
+session=${1:-dwm}
 
 case $session in
     i3)
@@ -16,6 +16,7 @@ case $session in
         ;;
     dwm) 
         export _JAVA_AWT_WM_NONREPARENTING=1
+        $HOME/.config/dwm/dwmstatus inf &
         exec dwm
         ;;
     # No known session, try to run it as command
