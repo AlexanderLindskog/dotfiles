@@ -49,6 +49,7 @@ endif
 
 call plug#begin()
     Plug 'rust-lang/rust.vim'
+    Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 filetype on
