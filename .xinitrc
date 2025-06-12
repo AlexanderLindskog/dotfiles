@@ -9,6 +9,8 @@ xset s 1800 1800
 xset dpms 1800 1800 1800
 
 session=${1:-dwm}
+setxkbmap -option ctrl:nocaps
+xcape -e 'Control_L=Escape'
 
 case $session in
     i3)

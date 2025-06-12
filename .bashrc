@@ -12,7 +12,9 @@ alias g++='g++ -fdiagnostics-color'
 alias g++20='g++ -std=c++20 -fdiagnostics-color -pedantic -Wall -Wextra'
 alias rustc='rustc --color always'
 alias less='less -R'
-alias kattis='g++20 -g main.cc && cat input | ./a.out'
+alias kattis='g++20 -g main.cc && ./a.out < input'
+alias thinlinc='/opt/thinlinc/bin/tlclient'
+alias mirror-output='xrandr --output HDMI-A-0 --auto --same-as eDP'
 
 COLOR2="$(tput setaf 2)"
 COLOR10="$(tput setaf 10)"
@@ -21,3 +23,6 @@ PS1='${COLOR2}\u@\h ${COLOR10}\W ${RESET}\$ '
 
 . "$HOME/.cargo/env"
 
+
+# Created by `pipx` on 2025-04-08 10:42:41
+export PATH="$PATH:/home/alex/.local/bin"
