@@ -66,3 +66,28 @@ vim.keymap.set('n', '<leader>i', '<cmd>lua vim.diagnostic.open_float()<CR>',
 vim.keymap.set('n', '<leader>n', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 vim.keymap.set('n', '<leader>N', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 
+function ToggleOrCreateTerminal()
+  local term_buf = nil
+
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) then
+      local bt = vim.api.nvim_get_option_value("buftype", {buf=buf})
+      if bt == "terminal" then
+        term_buf = buf
+        break
+      end
+    end
+  end
+
+  if term_buf ~= nil then
+    vim.api.nvim_set_current_buf(term_buf)
+  else
+    vim.cmd("terminal")
+  end
+end
+
+vim.keymap.set("n", "<leader>t", ToggleOrCreateTerminal, { desc = "Open or reuse terminal" })
+
+vim.cmd([[command ClearTrailingWhitespace %s/\s\+$//e]])
+--vim.cmd([[autocmd BufWritePost * %s/\s\+$//e]])
+
